@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "823776275463",
+    "project_id": "beloved-care",
+    "storage_bucket": "beloved-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823776275463:android:8af0104e79458d65374ea2",
+        "android_client_info": {
+          "package_name": "com.example.beloved_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823776275463-ccr33ntqa3a68kgg65t80hns2edcs27e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa267D3EhTe6uK8z9SPj8QYtg68xnTSUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823776275463-ccr33ntqa3a68kgg65t80hns2edcs27e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823776275463:android:6c4090c890a8278d374ea2",
+        "android_client_info": {
+          "package_name": "com.hassan.beloved_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823776275463-ccr33ntqa3a68kgg65t80hns2edcs27e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa267D3EhTe6uK8z9SPj8QYtg68xnTSUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823776275463-ccr33ntqa3a68kgg65t80hns2edcs27e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
