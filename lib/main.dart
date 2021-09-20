@@ -14,7 +14,6 @@ import 'package:beloved_care/screens/auth/forget_password.dart';
 import 'package:beloved_care/screens/auth/login.dart';
 import 'package:beloved_care/screens/auth/sign_up.dart';
 import 'package:beloved_care/screens/meeting_screen.dart';
-import 'package:beloved_care/services/stripeDemo.dart';
 import 'package:beloved_care/upload_product_form.dart';
 import 'package:beloved_care/user_state.dart';
 import 'package:beloved_care/wishlist/wishlist.dart';
