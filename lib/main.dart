@@ -68,7 +68,6 @@ class _MyAppState extends State<MyApp> {
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
 
   void getCurrentAppTheme() async {
-    print('called ,mmmmm');
     themeChangeProvider.darkTheme =
         await themeChangeProvider.darkThemePreferences.getTheme();
   }
