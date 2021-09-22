@@ -19,6 +19,7 @@ class UserState extends StatelessWidget {
           } else if (userSnapshot.connectionState == ConnectionState.active) {
             if (userSnapshot.hasData) {
               print('The user is already logged in');
+              print(userSnapshot.data);
               return
                   // LandingPage();
                   MainScreens();

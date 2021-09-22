@@ -47,6 +47,7 @@ dependencies:
   cached_network_image: ^3.1.0
   wave: ^0.2.0
   image_picker: ^0.8.3+3
+  image:
   google_sign_in: ^5.0.7
   firebase_storage: ^10.0.3
   http: ^0.13.3
@@ -55,6 +56,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   glassmorphism_ui:
   url_launcher: ^6.0.10
+  bot_toast:
   # stripe_payment: 
   #flutter_stripe:
   pay:

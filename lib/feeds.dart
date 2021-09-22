@@ -89,7 +89,7 @@ class _FeedsState extends State<Feeds> {
         onRefresh: _getProductsOnRefresh,
         child: GridView.count(
           crossAxisCount: 2,
-          childAspectRatio: 12 / 18,
+          childAspectRatio: 240 / 420,
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
           children: List.generate(productsList.length, (index) {
