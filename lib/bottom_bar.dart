@@ -1,9 +1,9 @@
 import 'package:beloved_care/consts/my_icons.dart';
-import 'package:beloved_care/screens/meeting_screen.dart';
+import 'package:beloved_care/screens/announcements/announcements.dart';
+import 'package:beloved_care/screens/landingPage.dart';
 import 'package:beloved_care/search.dart';
 import 'package:beloved_care/user_info.dart';
 import 'package:flutter/material.dart';
-import 'cart/cart.dart';
 import 'feeds.dart';
 
 class BottomBarScreen extends StatefulWidget {
@@ -19,10 +19,11 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   void initState() {
     pages = [
-      MeetingScreen(),
+      LandingPage(),
       Feeds(),
       Search(),
-      CartScreen(),
+      Announcements(),
+      // CartScreen(),
       UserInfo(),
     ];
     // _pages = [
@@ -93,7 +94,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                     icon: Icon(
                       MyAppIcons.bag,
                     ),
-                    label: 'Cart'),
+                    label: 'Notice Board'),
                 BottomNavigationBarItem(
                     icon: Icon(MyAppIcons.user), label: 'User'),
               ],

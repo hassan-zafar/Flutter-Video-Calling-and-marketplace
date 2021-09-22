@@ -10,6 +10,7 @@ import 'package:beloved_care/provider/dark_theme_provider.dart';
 import 'package:beloved_care/provider/favs_provider.dart';
 import 'package:beloved_care/provider/orders_provider.dart';
 import 'package:beloved_care/provider/products.dart';
+import 'package:beloved_care/screens/announcements/announcements.dart';
 import 'package:beloved_care/screens/auth/forget_password.dart';
 import 'package:beloved_care/screens/auth/login.dart';
 import 'package:beloved_care/screens/auth/sign_up.dart';
@@ -87,8 +88,8 @@ class _MyAppState extends State<MyApp> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return MaterialApp(
-                    builder: BotToastInit(),
-      navigatorObservers: [BotToastNavigatorObserver()],
+              builder: BotToastInit(),
+              navigatorObservers: [BotToastNavigatorObserver()],
               home: Scaffold(
                 body: Center(
                   child: CircularProgressIndicator(),
@@ -134,6 +135,7 @@ class _MyAppState extends State<MyApp> {
                     // '/': (ctx) => LandingPage(),
                     // WebhookPaymentScreen.routeName: (ctx) =>
                     //     WebhookPaymentScreen(),
+                    Announcements.routeName: (ctx) => Announcements(),
                     CartScreen.routeName: (ctx) => CartScreen(),
                     LandingPage.routeName: (ctx) => LandingPage(),
                     Feeds.routeName: (ctx) => Feeds(),

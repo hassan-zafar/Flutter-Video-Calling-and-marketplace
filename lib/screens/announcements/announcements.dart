@@ -11,6 +11,8 @@ import '../../universal_variables.dart';
 import 'addAnnouncements.dart';
 
 class Announcements extends StatefulWidget {
+  static const routeName = '/Announcements';
+
   @override
   _AnnouncementsState createState() => _AnnouncementsState();
 }
@@ -42,16 +44,13 @@ class _AnnouncementsState extends State<Announcements> {
     return Container(
       decoration: backgroundColorBoxDecoration(),
       child: Scaffold(
-        floatingActionButton: isAdmin!
-            ? FloatingActionButton(
-                onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(
-                        builder: (context) => AddAnnouncements()))
-                    .then((value) => getAnnouncements()),
-                child: Icon(Icons.add),
-                tooltip: "Add New Announcement",
-              )
-            : Container(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => AddAnnouncements()))
+              .then((value) => getAnnouncements()),
+          child: Icon(Icons.add),
+          tooltip: "Add New Announcement",
+        ),
         body: ListView(
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),

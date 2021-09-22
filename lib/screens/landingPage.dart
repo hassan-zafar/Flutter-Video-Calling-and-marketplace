@@ -54,17 +54,17 @@ class _LandingPageState extends State<LandingPage> {
                       text: "Create Meeting",
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _launchInBrowser(
-                            "https://belovedcare.com.au/shop/ols/products");
-                      });
-                    },
-                    child: EditedNeuomprphicContainer(
-                      text: "Enter MatketPlace",
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     setState(() {
+                  //       _launchInBrowser(
+                  //           "https://belovedcare.com.au/shop/ols/products");
+                  //     });
+                  //   },
+                  //   child: EditedNeuomprphicContainer(
+                  //     text: "Enter MatketPlace",
+                  //   ),
+                  // ),
                 ],
               ),
             ),
