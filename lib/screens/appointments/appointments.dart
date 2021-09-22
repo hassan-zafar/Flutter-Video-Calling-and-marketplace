@@ -13,6 +13,8 @@ import 'package:lottie/lottie.dart';
 import 'newAppointments.dart';
 
 class Appointments extends StatefulWidget {
+  static const routeName = '/Appointments';
+
   @override
   _AppointmentsState createState() => _AppointmentsState();
 }

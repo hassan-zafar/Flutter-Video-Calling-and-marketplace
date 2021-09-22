@@ -11,6 +11,7 @@ import 'package:beloved_care/provider/favs_provider.dart';
 import 'package:beloved_care/provider/orders_provider.dart';
 import 'package:beloved_care/provider/products.dart';
 import 'package:beloved_care/screens/announcements/announcements.dart';
+import 'package:beloved_care/screens/appointments/appointments.dart';
 import 'package:beloved_care/screens/auth/forget_password.dart';
 import 'package:beloved_care/screens/auth/login.dart';
 import 'package:beloved_care/screens/auth/sign_up.dart';
@@ -136,6 +137,7 @@ class _MyAppState extends State<MyApp> {
                     // WebhookPaymentScreen.routeName: (ctx) =>
                     //     WebhookPaymentScreen(),
                     Announcements.routeName: (ctx) => Announcements(),
+                    Appointments.routeName: (ctx) => Appointments(),
                     CartScreen.routeName: (ctx) => CartScreen(),
                     LandingPage.routeName: (ctx) => LandingPage(),
                     Feeds.routeName: (ctx) => Feeds(),
