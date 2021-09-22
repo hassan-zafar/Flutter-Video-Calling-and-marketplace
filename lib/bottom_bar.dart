@@ -58,8 +58,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       body: pages[_selectedPageIndex], //_pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomAppBar(
         // color: Colors.white,
-        shape: CircularNotchedRectangle(),
-        notchMargin: 0.01,
+        // shape: CircularNotchedRectangle(),
+        // notchMargin: 0.01,
         clipBehavior: Clip.antiAlias,
         child: Container(
           height: kBottomNavigationBarHeight * 0.98,
@@ -89,7 +89,10 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.room_service), label: 'Services'),
                 BottomNavigationBarItem(
-                    activeIcon: null, icon: Icon(null), label: 'Occasions'),
+                    icon: Icon(
+                      Icons.calendar_today,
+                    ),
+                    label: 'Occasions'),
                 BottomNavigationBarItem(
                     icon: Icon(
                       MyAppIcons.bag,
@@ -102,22 +105,22 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           ),
         ),
       ),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FloatingActionButton(
-          backgroundColor: Colors.purple,
-          hoverElevation: 10,
-          splashColor: Colors.grey,
-          tooltip: 'Search',
-          elevation: 4,
-          child: Icon(MyAppIcons.search),
-          onPressed: () => setState(() {
-            _selectedPageIndex = 2;
-          }),
-        ),
-      ),
+      // floatingActionButtonLocation:
+      //     FloatingActionButtonLocation.miniCenterDocked,
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: FloatingActionButton(
+      //     backgroundColor: Colors.purple,
+      //     hoverElevation: 10,
+      //     splashColor: Colors.grey,
+      //     tooltip: 'Search',
+      //     elevation: 4,
+      //     child: Icon(MyAppIcons.search),
+      //     onPressed: () => setState(() {
+      //       _selectedPageIndex = 2;
+      //     }),
+      //   ),
+      // ),
     );
   }
 }
