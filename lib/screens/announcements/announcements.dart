@@ -1,15 +1,13 @@
+import 'package:beloved_care/consts/colllections.dart';
+import 'package:beloved_care/consts/colors.dart';
 import 'package:beloved_care/widget/loading.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import 'package:beloved_care/config/colllections.dart';
 import 'package:beloved_care/database/database.dart';
 import 'package:beloved_care/models/announcementsModel.dart';
-import 'package:beloved_care/tools/loading.dart';
 
-import '../../constants.dart';
-import '../landingPage.dart';
+import '../../universal_variables.dart';
 import 'addAnnouncements.dart';
 
 class Announcements extends StatefulWidget {
@@ -42,11 +40,13 @@ class _AnnouncementsState extends State<Announcements> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: backgroundColorBoxDecorationLogo(),
+      decoration: backgroundColorBoxDecoration(),
       child: Scaffold(
         floatingActionButton: isAdmin!
             ? FloatingActionButton(
-                onPressed: () => Get.to(() => AddAnnouncements())!
+                onPressed: () => Navigator.of(context)
+                    .push(MaterialPageRoute(
+                        builder: (context) => AddAnnouncements()))
                     .then((value) => getAnnouncements()),
                 child: Icon(Icons.add),
                 tooltip: "Add New Announcement",
@@ -58,8 +58,8 @@ class _AnnouncementsState extends State<Announcements> {
           children: [
             Center(
               child: Text(
-                "WEMC Updates",
-                style: titleTextStyle(),
+                "Updates",
+                style: ralewayStyle(20),
               ),
             ),
             ListView.builder(
@@ -124,13 +124,15 @@ class _AnnouncementsState extends State<Announcements> {
             children: <Widget>[
               SimpleDialogOption(
                 onPressed: () {
-                  allUsersList.forEach((e) {
-                    announcementsRef
-                        .doc(e.id)
-                        .collection("userAnnouncements")
-                        .doc(id)
-                        .delete();
-                  });
+                  //TODO:fix this
+
+                  // allUsersList.forEach((e) {
+                  //   announcementsRef
+                  //       .doc(e.id)
+                  //       .collection("userAnnouncements")
+                  //       .doc(id)
+                  //       .delete();
+                  // });
                   getAnnouncements();
                   Navigator.pop(context);
                 },

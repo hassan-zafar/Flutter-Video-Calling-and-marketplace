@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:beloved_care/consts/colors.dart';
 import 'package:beloved_care/widget/loading.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
@@ -209,20 +210,20 @@ class _AddAnnouncementsState extends State<AddAnnouncements> {
               BotToast.showText(text: "Couldn't connect to servers!!");
             })
           : "";
-      allUsersList.forEach((e) async {
-        await createPostInFirestore(
-            announcementTitle: _titleTextController.text,
-            imageUrl: imageUrl,
-            eachUserId: e.id,
-            eachUserToken: e.androidNotificationToken,
-            description: _descriptionTextController.text);
-        sendAndRetrieveMessage(
-            token: e.androidNotificationToken!,
-            message: _descriptionTextController.text,
-            context: context,
-            imageUrl: imageUrl,
-            title: _titleTextController.text);
-      });
+      // allUsersList.forEach((e) async {
+      //   await createPostInFirestore(
+      //       announcementTitle: _titleTextController.text,
+      //       imageUrl: imageUrl,
+      //       eachUserId: e.id,
+      //       eachUserToken: e.androidNotificationToken,
+      //       description: _descriptionTextController.text);
+      //   sendAndRetrieveMessage(
+      //       token: e.androidNotificationToken!,
+      //       message: _descriptionTextController.text,
+      //       context: context,
+      //       imageUrl: imageUrl,
+      //       title: _titleTextController.text);
+      // });
 
       _descriptionTextController.clear();
       _titleTextController.clear();

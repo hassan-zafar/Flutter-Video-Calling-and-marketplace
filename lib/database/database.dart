@@ -28,11 +28,8 @@ class DatabaseMethods {
 
   Future getAnnouncements() async {
     List<AnnouncementsModel> tempAllAnnouncements = [];
-    QuerySnapshot tempAnnouncementsSnapshot = await FirebaseFirestore.instance
-        .collection('announcements')
-        .doc(currentUser!.id)
-        .collection("userAnnouncements")
-        .get();
+    QuerySnapshot tempAnnouncementsSnapshot =
+        await FirebaseFirestore.instance.collection('announcements').get();
     tempAnnouncementsSnapshot.docs.forEach((element) {
       tempAllAnnouncements.add(AnnouncementsModel.fromDocument(element));
     });

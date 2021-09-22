@@ -20,5 +20,16 @@ TextStyle montserratStyle(double size,
   );
 }
 
+TextStyle customTextStyle(
+    {FontWeight fontWeight = FontWeight.w300,
+    double fontSize = 25,
+    Color color = Colors.black}) {
+  return TextStyle(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      letterSpacing: 3);
+}
+
 CollectionReference userCollection =
     FirebaseFirestore.instance.collection("users");
