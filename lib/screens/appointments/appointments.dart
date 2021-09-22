@@ -1,5 +1,10 @@
+import 'package:beloved_care/consts/colllections.dart';
+import 'package:beloved_care/consts/colors.dart';
+import 'package:beloved_care/consts/universal_variables.dart';
+import 'package:beloved_care/database/database.dart';
 import 'package:beloved_care/models/appointmentsModel.dart';
 import 'package:beloved_care/tools/commonUIFunctions.dart';
+import 'package:beloved_care/widget/loading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
@@ -76,7 +81,7 @@ class _AppointmentsState extends State<Appointments> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "Welcome ${currentUser!.userName}",
+                    "Welcome ${currentUser!.name}",
                     style: titleTextStyle(
                       fontSize: 26,
                     ),

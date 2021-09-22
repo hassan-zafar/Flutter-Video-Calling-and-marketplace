@@ -1,8 +1,6 @@
-import 'package:beloved_care/consts/colors.dart';
 import 'package:beloved_care/consts/my_icons.dart';
 import 'package:beloved_care/provider/cart_provider.dart';
 import 'package:beloved_care/services/global_method.dart';
-import 'package:beloved_care/services/payment.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

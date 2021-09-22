@@ -13,6 +13,14 @@ TextStyle ralewayStyle(double size,
   );
 }
 
+TextStyle titleTextStyle({double fontSize = 25, Color color = Colors.black}) {
+  return TextStyle(
+      fontSize: fontSize,
+      fontWeight: FontWeight.w600,
+      color: color,
+      letterSpacing: 1.8);
+}
+
 TextStyle montserratStyle(double size,
     [Color? color, FontWeight fontWeight = FontWeight.w700]) {
   return GoogleFonts.montserrat(

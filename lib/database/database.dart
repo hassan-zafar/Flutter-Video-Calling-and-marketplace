@@ -1,7 +1,6 @@
-import 'dart:convert';
+import 'package:beloved_care/consts/colllections.dart';
 import 'package:beloved_care/models/announcementsModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class DatabaseMethods {
@@ -25,7 +24,12 @@ class DatabaseMethods {
       "imageUrl": imageUrl,
     });
   }
+  Future fetchAppointmentDataFromFirebase({@required String? uid}) async {
+    final QuerySnapshot allAppointmentsSnapshots =
+        await appointmentsRef.doc(uid).collection("userAppointments").get();
 
+    return allAppointmentsSnapshots;
+  }
   Future getAnnouncements() async {
     List<AnnouncementsModel> tempAllAnnouncements = [];
     QuerySnapshot tempAnnouncementsSnapshot =

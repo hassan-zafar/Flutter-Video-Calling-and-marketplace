@@ -10,7 +10,6 @@ import 'package:beloved_care/wishlist/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'cart/cart.dart';
 
 class Feeds extends StatefulWidget {
   static const routeName = '/Feeds';
