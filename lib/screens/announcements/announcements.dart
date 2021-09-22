@@ -7,7 +7,7 @@ import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:beloved_care/database/database.dart';
 import 'package:beloved_care/models/announcementsModel.dart';
 
-import '../../universal_variables.dart';
+import '../../consts/universal_variables.dart';
 import 'addAnnouncements.dart';
 
 class Announcements extends StatefulWidget {

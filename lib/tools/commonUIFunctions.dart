@@ -10,6 +10,14 @@ TextStyle homePageTextStyle({
       fontWeight: isClicked ? FontWeight.bold : FontWeight.w200);
 }
 
+TextStyle averageTextStyle({double fontSize = 18, Color color = Colors.black}) {
+  return TextStyle(
+      fontSize: fontSize,
+      fontWeight: FontWeight.w300,
+      color: color,
+      letterSpacing: 1.8);
+}
+
 List<BoxShadow> bxShadow = [
   BoxShadow(
       color: Colors.grey.shade600,

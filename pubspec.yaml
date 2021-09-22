@@ -60,6 +60,7 @@ dependencies:
   # stripe_payment: 
   #flutter_stripe:
   pay:
+  lottie:
   firebase_messaging:
   flutter_local_notifications:
 dev_dependencies:

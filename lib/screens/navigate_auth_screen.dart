@@ -1,7 +1,7 @@
 import 'package:beloved_care/screens/auth/login.dart';
 import 'package:beloved_care/screens/auth/sign_up.dart';
 
-import 'package:beloved_care/universal_variables.dart';
+import 'package:beloved_care/consts/universal_variables.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_gradient_colors/flutter_gradient_colors.dart';
 

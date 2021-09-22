@@ -89,7 +89,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 BottomNavigationBarItem(
                     icon: Icon(Icons.room_service), label: 'Services'),
                 BottomNavigationBarItem(
-                    activeIcon: null, icon: Icon(null), label: 'Search'),
+                    activeIcon: null, icon: Icon(null), label: 'Occasions'),
                 BottomNavigationBarItem(
                     icon: Icon(
                       MyAppIcons.bag,
