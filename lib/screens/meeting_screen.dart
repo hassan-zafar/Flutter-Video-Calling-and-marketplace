@@ -52,7 +52,7 @@ class _MeetingScreenState extends State<MeetingScreen>
           style: ralewayStyle(20, Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Color(0xFF07A8B2),
         bottom: TabBar(
           controller: tabController,
           tabs: [

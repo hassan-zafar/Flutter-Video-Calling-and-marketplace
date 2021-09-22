@@ -89,7 +89,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                   ),
                   PinCodeTextField(
                     controller: roomController,
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.transparent,
                     appContext: context,
                     autoDisposeControllers: false,
                     length: 6,
