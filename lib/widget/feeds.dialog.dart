@@ -34,7 +34,7 @@ class FeedDialog extends StatelessWidget {
             constraints: BoxConstraints(
                 minHeight: 100,
                 maxHeight: MediaQuery.of(context).size.height * 0.5),
-            width: double.infinity,
+            width: double.maxFinite,
             decoration: BoxDecoration(
               color: Theme.of(context).scaffoldBackgroundColor,
             ),
