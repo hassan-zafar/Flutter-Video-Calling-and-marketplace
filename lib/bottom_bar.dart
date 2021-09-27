@@ -1,5 +1,6 @@
 import 'package:beloved_care/consts/my_icons.dart';
 import 'package:beloved_care/screens/announcements/announcements.dart';
+import 'package:beloved_care/screens/appointments/appointments.dart';
 import 'package:beloved_care/screens/landingPage.dart';
 import 'package:beloved_care/search.dart';
 import 'package:beloved_care/user_info.dart';
@@ -21,7 +22,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     pages = [
       LandingPage(),
       Feeds(),
-      Search(),
+      Appointments(),
+      // Search(),
       Announcements(),
       // CartScreen(),
       UserInfo(),

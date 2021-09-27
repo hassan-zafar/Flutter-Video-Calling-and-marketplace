@@ -83,7 +83,7 @@ class _AppointmentsState extends State<Appointments> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "Welcome ${currentUser!.name}",
+                    "Welcome",
                     style: titleTextStyle(
                       fontSize: 26,
                     ),
@@ -138,27 +138,27 @@ class _AppointmentsState extends State<Appointments> {
                             ),
                     ],
                   ),
-            if (currentUser!.isAdmin!)
-              Positioned(
-                  right: 10,
-                  bottom: 60,
-                  child: GestureDetector(
-                    onTap: () => Navigator.of(context)
-                        .push(MaterialPageRoute(
-                            builder: (context) => NewAppointments()))
-                        .then((value) => getAppointments()),
-                    child: GlassContainer(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Icon(Icons.add),
-                            Text("Add New Announcement")
-                          ],
-                        ),
+            // if (currentUser!.isAdmin!)
+            Positioned(
+                right: 10,
+                bottom: 60,
+                child: GestureDetector(
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(
+                          builder: (context) => NewAppointments()))
+                      .then((value) => getAppointments()),
+                  child: GlassContainer(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.add),
+                          Text("Add New Announcement")
+                        ],
                       ),
                     ),
-                  )),
+                  ),
+                )),
           ],
         ),
       ),
