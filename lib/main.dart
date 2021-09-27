@@ -141,7 +141,7 @@ class _MyAppState extends State<MyApp> {
                     CartScreen.routeName: (ctx) => CartScreen(),
                     LandingPage.routeName: (ctx) => LandingPage(),
                     Feeds.routeName: (ctx) => Feeds(),
-                    WishlistScreen.routeName: (ctx) => WishlistScreen(),
+                    WishlistScreen.routeName: (ctx) => WishlistScreen(),-
                     MainScreens.routeName: (ctx) => MainScreens(),
                     ProductDetails.routeName: (ctx) => ProductDetails(),
                     LoginScreen.routeName: (ctx) => LoginScreen(),
