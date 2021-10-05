@@ -1,9 +1,10 @@
 import 'package:beloved_care/provider/products.dart';
-import 'package:beloved_care/screens/create_meeting_screen.dart';
-import 'package:beloved_care/screens/join_meeting_screen.dart';
 import 'package:beloved_care/consts/universal_variables.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
+
+import 'create_meeting_screen.dart';
+import 'join_meeting_screen.dart';
 
 class MeetingScreen extends StatefulWidget {
   static const routeName = '/MeetingScreen';

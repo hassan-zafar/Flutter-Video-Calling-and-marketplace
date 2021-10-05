@@ -1,9 +1,7 @@
 import 'package:beloved_care/consts/colors.dart';
 import 'package:beloved_care/consts/neuomorphic.dart';
-import 'package:beloved_care/screens/create_meeting_screen.dart';
-import 'package:beloved_care/screens/join_meeting_screen.dart';
-import 'package:beloved_care/screens/meeting_screen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:beloved_care/meeting/create_meeting_screen.dart';
+import 'package:beloved_care/meeting/join_meeting_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
