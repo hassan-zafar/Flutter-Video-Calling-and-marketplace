@@ -59,7 +59,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
           .HD_RESOLUTION; // Limit video resolution to 360p
 
       var options = JitsiMeetingOptions(
-              room: widget.isJoinMeeting! ? code : roomController.text)
+              room: widget.isJoinMeeting! ? roomController.text : code)
             // Required, spaces will be trimmed
             // ..serverURL = "https://someHost.com"
             // ..subject = "Meeting with Gunschu"
