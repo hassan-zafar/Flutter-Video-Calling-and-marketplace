@@ -12,9 +12,9 @@ import 'package:uuid/uuid.dart';
 
 // ignore: must_be_immutable
 class JoinMeetingScreen extends StatefulWidget {
-  bool? isCreateMeeting;
+  bool? isJoinMeeting;
   JoinMeetingScreen({
-    this.isCreateMeeting,
+    this.isJoinMeeting,
   });
   @override
   _JoinMeetingScreenState createState() => _JoinMeetingScreenState();
@@ -58,7 +58,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
           .HD_RESOLUTION; // Limit video resolution to 360p
 
       var options = JitsiMeetingOptions(
-              room: widget.isCreateMeeting! ? code : roomController.text)
+              room: widget.isJoinMeeting! ? code : roomController.text)
             // Required, spaces will be trimmed
             // ..serverURL = "https://someHost.com"
             // ..subject = "Meeting with Gunschu"
@@ -90,22 +90,23 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
             ),
             child: SingleChildScrollView(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     height: 24,
                   ),
-                  widget.isCreateMeeting!
+                  widget.isJoinMeeting!
                       ? Text(
                           "Room Code",
                           style: ralewayStyle(20),
                         )
                       : Container(),
-                  widget.isCreateMeeting!
+                  widget.isJoinMeeting!
                       ? SizedBox(
                           height: 20,
                         )
                       : Container(),
-                  widget.isCreateMeeting!
+                  widget.isJoinMeeting!
                       ? PinCodeTextField(
                           controller: roomController,
                           backgroundColor: Colors.transparent,
@@ -190,7 +191,9 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          "Join Meeting",
+                          widget.isJoinMeeting!
+                              ? "Join Meeting"
+                              : "Create Meeting",
                           style: montserratStyle(20, Colors.white),
                         ),
                       ),

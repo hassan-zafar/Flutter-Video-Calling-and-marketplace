@@ -59,6 +59,7 @@ class _AppointmentsState extends State<Appointments> {
     return Container(
       decoration: backgroundColorBoxDecoration(),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Stack(
           children: [
             Column(

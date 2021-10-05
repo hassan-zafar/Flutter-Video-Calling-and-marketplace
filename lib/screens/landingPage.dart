@@ -37,7 +37,9 @@ class _LandingPageState extends State<LandingPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => JoinMeetingScreen()));
+                          builder: (context) => JoinMeetingScreen(
+                                isJoinMeeting: true,
+                              )));
                     },
                     child: EditedNeuomprphicContainer(
                       text: "Join Meeting",
@@ -46,7 +48,9 @@ class _LandingPageState extends State<LandingPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => JoinMeetingScreen(isCreateMeeting: true,)));
+                          builder: (context) => JoinMeetingScreen(
+                                isJoinMeeting: false,
+                              )));
                     },
                     child: EditedNeuomprphicContainer(
                       text: "Create Meeting",

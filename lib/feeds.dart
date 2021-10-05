@@ -10,7 +10,6 @@ import 'package:beloved_care/wishlist/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 class Feeds extends StatefulWidget {
   static const routeName = '/Feeds';
 
@@ -35,70 +34,73 @@ class _FeedsState extends State<Feeds> {
     if (popular == 'popular') {
       productsList = productsProvider.popularProducts;
     }
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).cardColor,
-        title: Text('Services'),
-        actions: [
-          Consumer<FavsProvider>(
-            builder: (_, favs, ch) => Badge(
-              badgeColor: ColorsConsts.cartBadgeColor,
-              animationType: BadgeAnimationType.slide,
-              toAnimate: true,
-              position: BadgePosition.topEnd(top: 5, end: 7),
-              badgeContent: Text(
-                favs.getFavsItems.length.toString(),
-                style: TextStyle(color: Colors.white),
-              ),
-              child: IconButton(
-                icon: Icon(
-                  MyAppIcons.wishlist,
-                  color: ColorsConsts.favColor,
+    return Container(
+      decoration: backgroundColorBoxDecoration(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).cardColor,
+          title: Text('Services'),
+          actions: [
+            Consumer<FavsProvider>(
+              builder: (_, favs, ch) => Badge(
+                badgeColor: ColorsConsts.cartBadgeColor,
+                animationType: BadgeAnimationType.slide,
+                toAnimate: true,
+                position: BadgePosition.topEnd(top: 5, end: 7),
+                badgeContent: Text(
+                  favs.getFavsItems.length.toString(),
+                  style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed(WishlistScreen.routeName);
-                },
+                child: IconButton(
+                  icon: Icon(
+                    MyAppIcons.wishlist,
+                    color: ColorsConsts.favColor,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(WishlistScreen.routeName);
+                  },
+                ),
               ),
             ),
-          ),
-          Consumer<CartProvider>(
-            builder: (_, cart, ch) => Badge(
-              badgeColor: ColorsConsts.cartBadgeColor,
-              animationType: BadgeAnimationType.slide,
-              toAnimate: true,
-              position: BadgePosition.topEnd(top: 5, end: 7),
-              badgeContent: Text(
-                cart.getCartItems.length.toString(),
-                style: TextStyle(color: Colors.white),
-              ),
-              child: IconButton(
-                icon: Icon(
-                  MyAppIcons.cart,
-                  color: ColorsConsts.cartColor,
+            Consumer<CartProvider>(
+              builder: (_, cart, ch) => Badge(
+                badgeColor: ColorsConsts.cartBadgeColor,
+                animationType: BadgeAnimationType.slide,
+                toAnimate: true,
+                position: BadgePosition.topEnd(top: 5, end: 7),
+                badgeContent: Text(
+                  cart.getCartItems.length.toString(),
+                  style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {
-                  // Navigator.of(context).pushNamed(CartScreen.routeName);
-                },
+                child: IconButton(
+                  icon: Icon(
+                    MyAppIcons.cart,
+                    color: ColorsConsts.cartColor,
+                  ),
+                  onPressed: () {
+                    // Navigator.of(context).pushNamed(CartScreen.routeName);
+                  },
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-      body: RefreshIndicator(
-        onRefresh: _getProductsOnRefresh,
-        child: GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: 240 / 420,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          children: List.generate(productsList.length, (index) {
-            return ChangeNotifierProvider.value(
-              value: productsList[index],
-              child: FeedProducts(),
-            );
-          }),
+          ],
         ),
-      ),
+        body: RefreshIndicator(
+          onRefresh: _getProductsOnRefresh,
+          child: GridView.count(
+            crossAxisCount: 2,
+            childAspectRatio: 240 / 420,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            children: List.generate(productsList.length, (index) {
+              return ChangeNotifierProvider.value(
+                value: productsList[index],
+                child: FeedProducts(),
+              );
+            }),
+          ),
+        ),
 
 //         StaggeredGridView.countBuilder(
 //           padding: ,
@@ -110,6 +112,7 @@ class _FeedsState extends State<Feeds> {
 //   mainAxisSpacing: 8.0,
 //   crossAxisSpacing: 6.0,
 // ),
+      ),
     );
   }
 }

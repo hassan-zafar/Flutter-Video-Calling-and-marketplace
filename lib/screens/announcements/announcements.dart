@@ -44,6 +44,7 @@ class _AnnouncementsState extends State<Announcements> {
     return Container(
       decoration: backgroundColorBoxDecoration(),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => AddAnnouncements()))

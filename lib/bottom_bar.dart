@@ -97,7 +97,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                     label: 'Occasions'),
                 BottomNavigationBarItem(
                     icon: Icon(
-                      MyAppIcons.bag,
+                      Icons.notifications,
                     ),
                     label: 'Notice Board'),
                 BottomNavigationBarItem(
