@@ -52,6 +52,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
 
   _joinMeeting() async {
     try {
+      widget.isJoinMeeting! ? _ : generateMeetingCode();
       FeatureFlag featureFlag = FeatureFlag();
       featureFlag.welcomePageEnabled = false;
       featureFlag.resolution = FeatureFlagVideoResolution
