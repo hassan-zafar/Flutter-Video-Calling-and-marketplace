@@ -1,15 +1,21 @@
-import 'package:beloved_care/consts/colors.dart';
-import 'package:beloved_care/consts/universal_variables.dart';
+import "package:flutter/material.dart";
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import "package:flutter/material.dart";
 import 'package:flutter_gradient_colors/flutter_gradient_colors.dart';
-
 import 'package:jitsi_meet/feature_flag/feature_flag.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import 'package:beloved_care/consts/colors.dart';
+import 'package:beloved_care/consts/universal_variables.dart';
+import 'package:uuid/uuid.dart';
+
+// ignore: must_be_immutable
 class JoinMeetingScreen extends StatefulWidget {
+  bool? isCreateMeeting;
+  JoinMeetingScreen({
+    this.isCreateMeeting,
+  });
   @override
   _JoinMeetingScreenState createState() => _JoinMeetingScreenState();
 }
@@ -21,11 +27,18 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
   bool isAudioMuted = true;
   String name = "";
   bool isData = false;
+  String code = "";
 
   @override
   void initState() {
     super.initState();
     getData();
+  }
+
+  generateMeetingCode() {
+    setState(() {
+      code = Uuid().v1().substring(0, 6);
+    });
   }
 
   getData() async {
@@ -44,7 +57,8 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
       featureFlag.resolution = FeatureFlagVideoResolution
           .HD_RESOLUTION; // Limit video resolution to 360p
 
-      var options = JitsiMeetingOptions(room: roomController.text)
+      var options = JitsiMeetingOptions(
+              room: widget.isCreateMeeting! ? code : roomController.text)
             // Required, spaces will be trimmed
             // ..serverURL = "https://someHost.com"
             // ..subject = "Meeting with Gunschu"
@@ -80,24 +94,31 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                   SizedBox(
                     height: 24,
                   ),
-                  Text(
-                    "Room Code",
-                    style: ralewayStyle(20),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  PinCodeTextField(
-                    controller: roomController,
-                    backgroundColor: Colors.transparent,
-                    appContext: context,
-                    autoDisposeControllers: false,
-                    length: 6,
-                    onChanged: (value) {},
-                    animationType: AnimationType.fade,
-                    pinTheme: PinTheme(shape: PinCodeFieldShape.underline),
-                    animationDuration: Duration(microseconds: 300),
-                  ),
+                  widget.isCreateMeeting!
+                      ? Text(
+                          "Room Code",
+                          style: ralewayStyle(20),
+                        )
+                      : Container(),
+                  widget.isCreateMeeting!
+                      ? SizedBox(
+                          height: 20,
+                        )
+                      : Container(),
+                  widget.isCreateMeeting!
+                      ? PinCodeTextField(
+                          controller: roomController,
+                          backgroundColor: Colors.transparent,
+                          appContext: context,
+                          autoDisposeControllers: false,
+                          length: 6,
+                          onChanged: (value) {},
+                          animationType: AnimationType.fade,
+                          pinTheme:
+                              PinTheme(shape: PinCodeFieldShape.underline),
+                          animationDuration: Duration(microseconds: 300),
+                        )
+                      : Container(),
                   SizedBox(
                     height: 10,
                   ),

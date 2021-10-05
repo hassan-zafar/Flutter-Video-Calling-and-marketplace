@@ -10,9 +10,9 @@ class CreateMeeetingScreen extends StatefulWidget {
 }
 
 class _CreateMeeetingScreenState extends State<CreateMeeetingScreen> {
-  String code = "";
   var isVis = false;
 
+  String code = "";
   generateMeetingCode() {
     setState(() {
       code = Uuid().v1().substring(0, 6);
