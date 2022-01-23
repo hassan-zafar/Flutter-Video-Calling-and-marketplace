@@ -1,7 +1,6 @@
 # beloved_care
 
-A new Flutter project.
-
+Implemented video live calling functionality using JitsiMeet
 ## Getting Started
 
 This project is a starting point for a Flutter application.
