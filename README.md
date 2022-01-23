@@ -1,4 +1,4 @@
-# beloved_care-Video calling app with marketplace to buy goods
+# beloved_care-Video calling app with e-commerce functionality to buy goods
 
 Implemented video live calling functionality using JitsiMeet
 ## Getting Started
